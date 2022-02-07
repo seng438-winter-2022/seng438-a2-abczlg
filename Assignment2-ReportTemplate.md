@@ -11,7 +11,7 @@
 
 # 1 Introduction
 
-Text…
+In this lab, we are testing a software using automated unit testing based on the requirements of each unit. Using JUnit, we will develop automated test code for different subsystems of a software called JFreeChart. Testing of this software will include the use of mock objects. The objective of this lab is to familiarize ourselves with automated unit testing using JUnit.
 
 # 2 Detailed description of unit test strategy
 
