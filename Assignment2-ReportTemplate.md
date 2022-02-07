@@ -2,12 +2,12 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
+| Group \#:      |  8   |
 | -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Student Names: |  Kaitlin Culligan   |
+|                |  Kunal Dhawan   |
+|                |  Chloe Bouchard   |
+|                |  Jacob Lansang   |
 
 # 1 Introduction
 
