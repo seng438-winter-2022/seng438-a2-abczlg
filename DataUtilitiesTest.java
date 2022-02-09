@@ -1,7 +1,9 @@
 package org.jfree.data.test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.jfree.data.DataUtilities;
 import org.jfree.data.Values2D;
@@ -189,6 +191,30 @@ public class DataUtilitiesTest extends DataUtilities {
 	    assertEquals(0.5, result.getValue(0));
 	    assertEquals(1.0, result.getValue(1));
 
+	}
+	
+	@Test
+	public void equalsTest() {
+		double[][] a = {{1, 1}, {2, 2}, {3, 3}};
+		double[][] b = {{1, 1}, {2, 2}, {3, 3}};
+
+		assertTrue("Arrays should be equal.", DataUtilities.equal(a,b));
+	}
+	
+	@Test
+	public void equalsTestNotEqual() {
+		double[][] a = {{1, 1}, {2, 2}, {3, 3}};
+		double[][] b = {{1, 1}, {2, 2}, {3, 4}};
+
+		assertFalse("Arrays should not be equal.", DataUtilities.equal(a,b));
+	}
+	
+	@Test
+	public void equalsTestEmptyArrays() {
+		double[][] a = {};
+		double[][] b = {};
+
+		assertTrue("Arrays should be equal.", DataUtilities.equal(a,b));
 	}
 	
 }
