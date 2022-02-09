@@ -165,7 +165,7 @@ public class RangeTest {
     }
     
     @Test
-    public void containsTestWithDouble() {
+    public void containsTestBelowLowerBoundaryWithDoubles() {
     	exampleRange = new Range(-50.25, 23);
     	assertFalse("Contains should return false.", exampleRange.contains(-50.26));
     }
