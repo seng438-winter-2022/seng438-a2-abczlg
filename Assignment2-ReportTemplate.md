@@ -27,11 +27,11 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-We collaborated together and completed the writing of all tests as a team.
+We collaborated together and completed the writing of all tests as a team. All of us fixed a time and met on our Discord Server at the selected time.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-We had some difficulties getting JUnit to work on Ecllipse. This challenge was overcome by troubleshooting the error messages and other problems encountered
+We had some difficulties getting JUnit to work on Ecllipse, such as we were getting way too many failure traces, this was fixed after we added the hamrest-1.3.jar file, such  challenges were overcome by troubleshooting the error messages and other problems encountered.
 
 # 6 Comments/feedback on the lab itself
 
