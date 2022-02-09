@@ -15,7 +15,7 @@ In this lab, we are testing a software using automated unit testing based on the
 
 # 2 Detailed description of unit test strategy
 
-// including the input partitions you have designed
+We utilized black-box testing for our unit tests. Primarily, using boundary value analysis as well as equivalence classes. As part of designing our unit tests, we had to establish the domain for each input variable for the methods under test. After establishing each variable's domain, we determined equivalence classes using this information. Knowing the reaches of each equivalence class allowed us to determine the boundaries of the domains of each input variable and as such, determine the values which should be selected for unit testing. 
 
 # 3 Test cases developed
 
@@ -27,11 +27,11 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Text…
+We collaborated together and completed the writing of all tests as a team.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
+We had some difficulties getting JUnit to work on Ecllipse. This challenge was overcome by troubleshooting the error messages and other problems encountered
 
 # 6 Comments/feedback on the lab itself
 
