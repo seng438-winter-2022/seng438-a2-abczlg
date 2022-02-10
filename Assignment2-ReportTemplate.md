@@ -27,11 +27,11 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-We collaborated together and completed the writing of all tests as a team. All of us fixed a time and met on our Discord Server at the selected time. Work was mainly done through partner programming, where we all examined the same coding terminal and helped to write test cases.
+All work was produced as a team. We collaborated together and completed the writing of all tests synchronously. As a team, meetings were decided based on availability of all members. Given a date and time that worked for everyone, we met on our Discord Server. Our team work was mainly done through pair programming, to ensure higher quality of code. While one team member worked on writing everything down, the rest of the team determined which tests needed to be performed. This practice ensured that we caught typos and bugs faster. We were also able to develop test cases quickly and efficiently. 
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-We had some difficulties getting JUnit to work on Ecllipse, such as we were getting way too many failure traces, this was fixed after we added the hamrest-1.3.jar file, such  challenges were overcome by troubleshooting the error messages and other problems encountered. There was some difficulty coming up with correct test cases for certain methods, specifically methods in DataUtilities. Difficulties here were likely due to having to make mock Values2D objects for each test. There was a bit of a challenge trying to make non-redundant test methods, but we solved these problems by using the boundary testing methods taught in class.   
+We had some difficulties getting JUnit to work on Eclipse. The main difficulty faced during this project was the abundance of failure traces. Our team spent a lot of time trying to fix this issue, which initially slowed down our process. However, this problem was fixed after adding the hamrest-1.3.jar file. Additionally, there was some difficulty coming up with correct test cases for certain methods, specifically methods in DataUtilities. Certain methods had ambiguous Javadoc documentation, which caused confusion among the team. Because of this, it was difficult to establish the expected output for these methods. After some research and problem solving, our team was able to calculate and predict the expected values. We also had to spend a considerable about of time figuring out how to properly make mock Values2D objects. Finally, there was a bit of a challenge trying to make non-redundant test methods, but this problem was solved by using the boundary testing methods taught in class.   
 
 # 6 Comments/feedback on the lab itself
 
