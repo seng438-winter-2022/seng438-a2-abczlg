@@ -11,7 +11,7 @@
 
 # 1 Introduction
 
-In this lab, we are testing a software using automated unit testing based on the requirements of each unit. Using JUnit, we will develop automated test code for different subsystems of a software called JFreeChart. Testing of this software will include the use of mock objects. The objective of this lab is to familiarize ourselves with automated unit testing using JUnit.
+In this lab, we are testing a software using automated unit testing based on the requirements of each unit. Using JUnit, we will develop automated test code for different subsystems of a software called JFreeChart. Testing of this software will include the use of mock objects. The objective of this lab is to familiarize ourselves with automated unit testing using JUnit, which includes the creation of mock objects.
 
 # 2 Detailed description of unit test strategy
 
@@ -27,11 +27,11 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-We collaborated together and completed the writing of all tests as a team. All of us fixed a time and met on our Discord Server at the selected time.
+We collaborated together and completed the writing of all tests as a team. All of us fixed a time and met on our Discord Server at the selected time. Work was mainly done through partner programming, where we all examined the same coding terminal and helped to write test cases.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-We had some difficulties getting JUnit to work on Ecllipse, such as we were getting way too many failure traces, this was fixed after we added the hamrest-1.3.jar file, such  challenges were overcome by troubleshooting the error messages and other problems encountered.
+We had some difficulties getting JUnit to work on Ecllipse, such as we were getting way too many failure traces, this was fixed after we added the hamrest-1.3.jar file, such  challenges were overcome by troubleshooting the error messages and other problems encountered. There was some difficulty coming up with correct test cases for certain methods, specifically methods in DataUtilities. Difficulties here were likely due to having to make mock Values2D objects for each test. There was a bit of a challenge trying to make non-redundant test methods, but we solved these problems by using the boundary testing methods taught in class.   
 
 # 6 Comments/feedback on the lab itself
 
