@@ -36,3 +36,5 @@ We had some difficulties getting JUnit to work on Ecllipse, such as we were gett
 # 6 Comments/feedback on the lab itself
 
 Text…
+
+This lab was a good introduction to writing automated tests using JUnit. We were able to apply our knowledge by making test cases that used elements of black box testing and boundary value testing. The use of mock objects was somewhat simple and the classes we tested helped us learn how to create and use mock objects. 
