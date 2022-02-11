@@ -37,6 +37,34 @@ public class DataUtilitiesTest extends DataUtilities {
 	    // tear-down: NONE in this test method
 	}
 	
+	@Test (expected = NullPointerException.class)
+	public void calculateNullColumn() {
+	    // setup
+	    Mockery mockingContext = new Mockery();
+	    final Values2D values = mockingContext.mock(Values2D.class);
+	    mockingContext.checking(new Expectations() {
+	        {
+	            one(values).getRowCount();
+	            will(returnValue(2));
+	            one(values).getValue(0, 0);
+	            will(returnValue(7.5));
+	            one(values).getValue(1, 0);
+	            will(returnValue(2.5));
+	            
+	            one(values).getValue(0, -1);
+	            will(throwException(new IndexOutOfBoundsException()));
+	        }
+	    });
+	    
+	    Integer nullVal = null;
+	 
+	    DataUtilities.calculateColumnTotal(values, nullVal);
+	    // verify
+	    // tear-down: NONE in this test method
+	}
+	
+	
+	
 	@Test
 	public void calculateRowForTwoValues() {
 	    // setup
@@ -61,6 +89,34 @@ public class DataUtilitiesTest extends DataUtilities {
 	    //assertNull("The column total value should be NULL.", result2);
 	    // tear-down: NONE in this test method
 	}
+	
+	@Test (expected = NullPointerException.class)
+	public void calculateNullRow() {
+	    // setup
+	    Mockery mockingContext = new Mockery();
+	    final Values2D values = mockingContext.mock(Values2D.class);
+	    mockingContext.checking(new Expectations() {
+	        {
+	            one(values).getRowCount();
+	            will(returnValue(2));
+	            one(values).getValue(0, 0);
+	            will(returnValue(7.5));
+	            one(values).getValue(1, 0);
+	            will(returnValue(2.5));
+	            
+	            one(values).getValue(-1, 0);
+	            will(throwException(new IndexOutOfBoundsException()));
+
+	        }
+	    });
+	    
+	    Integer nullVal = null;
+	 
+	    DataUtilities.calculateColumnTotal(values, nullVal);
+	    // verify
+	    // tear-down: NONE in this test method
+	}
+	
 	
 	@Test 
 	public void createNumberArrayTest() {
@@ -94,6 +150,28 @@ public class DataUtilitiesTest extends DataUtilities {
 		assertEquals("Arrays should be equal.", answer, DataUtilities.createNumberArray2D(test));
 		
 	}
+	
+	@Test 
+	public void createEmptyNumberArray() {
+	    // setup
+		
+		double[][] test = {};
+		Number[][] answer = {};
+		
+		assertEquals("Array should be empty.", answer, DataUtilities.createNumberArray2D(test));
+		
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void createNullNumberArray() {
+	    // setup
+		
+		double[][] test = null;
+		Number[][] answer = {};
+		
+		assertNull("Array should be NULL.", DataUtilities.createNumberArray2D(test));
+	}
+	
 	
 	@Test
 	public void getCumulativePercentagesTest() {
@@ -193,6 +271,21 @@ public class DataUtilitiesTest extends DataUtilities {
 
 	}
 	
+	@Test(expected = IllegalStateException.class)
+	public void getCumulativePercentagesTestNullItems() {
+		Mockery mockingContext = new Mockery();
+	    final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	    mockingContext.checking(new Expectations() {
+	        {
+	            allowing(values).getItemCount();
+	            will(returnValue(null));
+
+	        }
+	    });
+	
+	    KeyedValues result = DataUtilities.getCumulativePercentages(values);
+	}
+	
 	@Test
 	public void equalsTest() {
 		double[][] a = {{1, 1}, {2, 2}, {3, 3}};
@@ -213,6 +306,14 @@ public class DataUtilitiesTest extends DataUtilities {
 	public void equalsTestEmptyArrays() {
 		double[][] a = {};
 		double[][] b = {};
+
+		assertTrue("Arrays should be equal.", DataUtilities.equal(a,b));
+	}
+	
+	@Test
+	public void equalsTestNullArrays() {
+		double[][] a = null;
+		double[][] b = null;
 
 		assertTrue("Arrays should be equal.", DataUtilities.equal(a,b));
 	}
