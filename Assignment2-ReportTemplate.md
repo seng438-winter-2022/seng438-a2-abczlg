@@ -11,19 +11,32 @@
 
 # 1 Introduction
 
-In this lab, we are testing a software using automated unit testing based on the requirements of each unit. Using JUnit, we will develop automated test code for different subsystems of a software called JFreeChart. Testing of this software will include the use of mock objects. The objective of this lab is to familiarize ourselves with automated unit testing using JUnit, which includes the creation of mock objects.
+In this lab, we are testing a software using automated unit testing based on the requirements of each unit. The challenge given to us was that two classes (Range.class &
+DataUtilities.class) needed to have five (each) of their methods tested. Using JUnit, we developed automated test code for different subsystems of a software called JFreeChart. 
+Testing of this software will include the use of mock objects. The objective of this lab is to familiarize ourselves with automated unit testing using JUnit, which includes the creation of mock objects.
 
 # 2 Detailed description of unit test strategy
 
-We utilized black-box testing for our unit tests. Primarily, using boundary value analysis as well as equivalence classes. As part of designing our unit tests, we had to establish the domain for each input variable for the methods under test. After establishing each variable's domain, we determined equivalence classes using this information. Knowing the reaches of each equivalence class allowed us to determine the boundaries of the domains of each input variable and as such, determine the values which should be selected for unit testing. 
+We utilized black-box testing for our unit tests. Primarily, using boundary value analysis as well as equivalence classes. As part of designing our unit tests, we had to establish the domain for each input variable for the methods under test. After establishing each variable's domain, we determined equivalence classes using this information. Knowing the reaches of each equivalence class allowed us to determine the boundaries of the domains of each input variable and as such, determine the values which should be selected for unit testing. There is some overlap with these techniques but we felt that the combination of these two covered the requirements of each function but in reality its been more equivalence class
 
 # 3 Test cases developed
-
-Text…
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
+
+
+| Class          | Method   | Test Name | Strategy |
+| -------------- | --------- | ----------- | ----------|
+| Range Class    |    |     |     | 
+|                |   |     |     | 
+|                |   |    |     | 
+|                |     |     |     | 
+| -------------- | --------- | ----------- | ----------|
+| DataUtilities Class |    |     |     | 
+|                |   |     |     | 
+|                |   |    |     | 
+|                |     |     |     |
 
 # 4 How the team work/effort was divided and managed
 
@@ -35,6 +48,4 @@ We had some difficulties getting JUnit to work on Eclipse. The main difficulty f
 
 # 6 Comments/feedback on the lab itself
 
-Text…
-
-This lab was a good introduction to writing automated tests using JUnit. We were able to apply our knowledge by making test cases that used elements of black box testing and boundary value testing. The use of mock objects was somewhat simple and the classes we tested helped us learn how to create and use mock objects. 
+This lab was a good introduction to writing automated tests using JUnit. We were able to apply our knowledge by making test cases that used elements of black box testing and boundary value testing. The use of mock objects was somewhat simple and the classes we tested helped us learn how to create and use mock objects. A jar file that was required for the assignment was not included and we were expected to find that file on the internet and source it from there. This delayed the learning experience as we spent more time initially on finding the file instead of working with it. The lab presentation was very useful as we were given some necessary feedback.
