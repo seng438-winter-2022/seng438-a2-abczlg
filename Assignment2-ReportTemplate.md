@@ -51,8 +51,6 @@ you have explained in the test strategy section //above
 |   Range Class             |      |       |          |
 |   Range Class             |      |       |          |
 |   Range Class             |      |       |          |
-
-
 | DataUtilities Class |  calculateColumnTotal(Values2D data, int column)  |  calculateColumnTotalForTwoValues()   | Test basic functionality by creating two rows with small values (7.5, 2.5). Add the values of each column. Expecting 10.0.    | 
 |  DataUtilities Class               | calculateColumnTotal(Values2D data, int column)  |  calculateNullColumn()   |  Try to calculate the total sum of a non-existing column. Should not work and a NullPointerException should be thrown.    | 
 |  DataUtilities Class               | calculateRowTotal(Values2D data, int row)  |  calculateRowForTwoValues()  | Test basic functionality by creating two columns with small values (5.5, 4.5) and sum up each column. Expecting 10.0.    | 
