@@ -28,29 +28,29 @@ you have explained in the test strategy section //above
 
 | Class          | Method   | Test Name | Strategy |
 | -------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| Range Class    |  getCentralValue()  |  centralValueShouldBeZero()   |     | 
-|  Range Class              | getCentralValue()  | centralValueShouldBeZeroZero()    |    | 
-|  Range Class              |  getCentralValue() | centralValueShouldBeFour()   |     | 
-|   Range Class             |  getCentralValue()   | centralValueShouldBeOne()    |     | 
-|   Range Class             |      |  getLowerBoundTest()     |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
-|   Range Class             |      |       |          |
+| Range Class    |  getCentralValue()  |  centralValueShouldBeZero()   |  Tests basic functionality of getCentralValue by inputing 1 and -1. Expects 0.   | 
+|  Range Class              | getCentralValue()  | centralValueShouldBeZeroZero()    | Tests basic functionality of getCentralValue by using larger values (-2, 2).   | 
+|  Range Class              |  getCentralValue() | centralValueShouldBeFour()   | Tests getCentralValue() in order to get a central value of more greater than 0 by using input of 2 and 6. Expect to get 4.     | 
+|   Range Class             |  getCentralValue()   | centralValueShouldBeOne()    |  Tests if the central value can be determined if the lower and upper boundary of the range are the same.   | 
+|   Range Class             |  getLowerBound()    |  getLowerBoundTest()     |  Tests basic functionality of getLowerBound by using a range of two small double values (1.5/7.6). Expect to get 1.5.
+|   Range Class             | getLowerBound()     |  getLowerBoundTestWithEqualBoundaries()     |   Tests getLowerBound by inputting two equal values for the lower and upper boundary (2, 2).Expect to get 2.0.
+|   Range Class             |  getLowerBound()    |  getLowerBoundTestWithNegativeLowerBoundary()     |   Tests to see if a negative lower boundary can be used in the Range (-2.015, 2.0) to get the correct lower boundary. Expect to get -2.015.
+|   Range Class             |  getLowerBound()    |  getLowerBoundTestWithNegativeBoundaries()     |          |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTest()     |          |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithEqualBoundaries()     |          |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithNegativeUpperBoundary()     |          |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithNegativeBoundaries()      |          |
+|   Range Class             |  getLength()    |  getLengthShouldBeSeventyTwo()     |          |
+|   Range Class             |  getLength()    |  getLengthShouldBeZero()     |          |
+|   Range Class             |  getLength()    |  getLengthNegativeLowerBoundary()     |          |
+|   Range Class             |  getLength()    |  getLengthNegativeBoundaries()     |          |
+|   Range Class             |  contains(double value)    |  containsTestLowerBoundary()     |          |
+|   Range Class             |  contains(double value)    |  containsTestUpperBoundary()     |          |
+|   Range Class             |  contains(double value)    |  containsTestAboveUpperBoundary()     |          |
+|   Range Class             |  contains(double value)    |  containsTestBelowLowerBoundary()     |          |
+|   Range Class             |  contains(double value)    |  containsTestMiddleValue()     |          |
+|   Range Class             |  contains(double value)    |  containsTestWithDouble()     |          |
+|   Range Class             |  contains(double value)    |  containsTestBelowLowerBoundaryWithDoubles()     |          |
 | DataUtilities Class |  calculateColumnTotal(Values2D data, int column)  |  calculateColumnTotalForTwoValues()   | Test basic functionality by creating two rows with small values (7.5, 2.5). Add the values of each column. Expecting 10.0.    | 
 |  DataUtilities Class               | calculateColumnTotal(Values2D data, int column)  |  calculateNullColumn()   |  Try to calculate the total sum of a non-existing column. Should not work and a NullPointerException should be thrown.    | 
 |  DataUtilities Class               | calculateRowTotal(Values2D data, int row)  |  calculateRowForTwoValues()  | Test basic functionality by creating two columns with small values (5.5, 4.5) and sum up each column. Expecting 10.0.    | 
