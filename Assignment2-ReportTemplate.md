@@ -29,14 +29,21 @@ you have explained in the test strategy section //above
 | Class          | Method   | Test Name | Strategy |
 | -------------- | ---------------------------- | ---------------------------- | ---------------------------- |
 | Range Class    |    |     |     | 
-|  Range Class              |   |     |     | 
+|  Range Class              |   |     |    | 
 |  Range Class              |   |    |     | 
 |   Range Class             |     |     |     | 
 |   Range Class             |      |       |          |
-| DataUtilities Class |    |     |     | 
-|  DataUtilities Class               |   |     |     | 
-|  DataUtilities Class               |   |    |     | 
-|  DataUtilities Class              |     |     |     |
+| DataUtilities Class |  calculateColumnTotal(Values2D data, int column)  |  calculateColumnTotalForTwoValues()   | Test basic functionality by creating two rows with small values (7.5, 2.5). Add the values of each column. Expecting 10.0.    | 
+|  DataUtilities Class               | calculateColumnTotal(Values2D data, int column)  |  calculateNullColumn()   |  Try to calculate the total sum of a non-existing column. Should not work and a NullPointerException should be thrown.    | 
+|  DataUtilities Class               | calculateRowTotal(Values2D data, int row)  |  calculateRowForTwoValues()  | Test basic functionality by creating two columns with small values (5.5, 4.5) and sum up each column. Expecting 10.0.    | 
+|  DataUtilities Class              |   calculateRowTotal(Values2D data, int row)   | calculateNullRowTotal()    | Try to calculate the total sum of a non-existing row. Should result in a NullPointerException.    |
+|  DataUtilities Class              |  createNumberArray(double[] data)   |  createNumberArrayTest()   | Test basic functionality by constructing a number array using createNumberArray(double[] data) and integer values (1, 2, 3). A Number array should be created that is equal to {1.0, 2.0, 3.0}.    |
+|  DataUtilities Class              |  createNumberArray(double[] data)   |  createNumberArrayWithDoubles()   |  Test that function accepts doubles to create a Number array by using values of {1.45, 2.84, 3.35}. Expect to create a Number array equal to this array.   |
+|  DataUtilities Class              |  createNumberArray(double[] data)   |  createNumberArrayWithNull()   |  Test that the function will not create an array and instead return an IllegalArgumentException.  |
+|  DataUtilities Class              |  createNumberArray2D(double[][] data)   |  createNumberArray2D()   |  Test basic functionality by inputting a small 2D array with basic int values ({{1, 1}, {2, 2}, {3, 3}}). Expecting to get a 2D Number array with the same values as the input array.  |
+|  DataUtilities Class              |  createNumberArray2D(double[][] data)   |  createEmptyNumberArray2D()   |  Test that the function will ne able to construct an empty array. Expecting an empty 2D Number array.  |
+|  DataUtilities Class              |  createNumberArray2D(double[][] data)   |  createNullNumberArray2D()   |  Test that the function will not create a 2D array and instead return an IllegalArgumentException.  |
+
 
 # 4 How the team work/effort was divided and managed
 
