@@ -20,7 +20,7 @@ public class RangeTest {
     }
     
     @Test
-    public void centralValueShouldBeZeroZero() {
+    public void centralValueShouldBeZero2() {
     	exampleRange = new Range(-2, 2);
         assertEquals("The central value of -2 and 2 should be 0",
         0, exampleRange.getCentralValue(), .000000001d);
@@ -38,6 +38,12 @@ public class RangeTest {
     	exampleRange = new Range(1, 1);
         assertEquals("The central value of 1 and 1 should be 1",
         1, exampleRange.getCentralValue(), .000000001d);
+    }
+    
+    @Test(expected = NullPointerException.class)
+    public void centralValueWithNulls() {
+    	exampleRange = null;
+        assertNull("The central value should not exist.", exampleRange.getCentralValue());
     }
 
     @After
@@ -76,6 +82,14 @@ public class RangeTest {
     	assertEquals("Lower bound should equal -2.015.", -2.015, exampleRange.getLowerBound(), .000000001d);
     }
     
+    @Test(expected = NullPointerException.class)
+    public void getLowerBoundWithNull() {
+    	exampleRange = null;
+        assertNull("The lower bound should not exist.", exampleRange.getCentralValue());
+
+    }
+    
+    
     @Test
     public void getUpperBoundTest() {
     	exampleRange = new Range(1.5, 7.6);
@@ -104,6 +118,12 @@ public class RangeTest {
     	assertEquals("Upper bound should equal -2.0.", -2.0, exampleRange.getUpperBound(), .000000001d);
     }
     
+    @Test(expected = NullPointerException.class)
+    public void getUpperBoundWithNull() {
+    	exampleRange = null;
+        assertNull("The lower bound should not exist.", exampleRange.getCentralValue());
+    }
+    
     @Test
     public void getLengthShouldBeSeventyTwo() {
     	exampleRange = new Range(24, 96);
@@ -126,6 +146,12 @@ public class RangeTest {
     public void getLengthNegativeBoundaries() {
     	exampleRange = new Range(-96, -10);
     	assertEquals("Length should equal 86.", 86, exampleRange.getLength(), .000000001d);
+    }
+    
+    @Test(expected = NullPointerException.class)
+    public void getLengthWithNull() {
+    	exampleRange = null;
+        assertNull("The length should not exist.", exampleRange.getCentralValue());
     }
     
     @Test
@@ -168,5 +194,11 @@ public class RangeTest {
     public void containsTestBelowLowerBoundaryWithDoubles() {
     	exampleRange = new Range(-50.25, 23);
     	assertFalse("Contains should return false.", exampleRange.contains(-50.26));
+    }
+    
+    @Test(expected = NullPointerException.class)
+    public void containsTestWithNull() {
+    	exampleRange = null;
+        assertNull("The this range should not contain anything.", exampleRange.getCentralValue());
     }
 }
