@@ -43,6 +43,15 @@ you have explained in the test strategy section //above
 |  DataUtilities Class              |  createNumberArray2D(double[][] data)   |  createNumberArray2D()   |  Test basic functionality by inputting a small 2D array with basic int values ({{1, 1}, {2, 2}, {3, 3}}). Expecting to get a 2D Number array with the same values as the input array.  |
 |  DataUtilities Class              |  createNumberArray2D(double[][] data)   |  createEmptyNumberArray2D()   |  Test that the function will ne able to construct an empty array. Expecting an empty 2D Number array.  |
 |  DataUtilities Class              |  createNumberArray2D(double[][] data)   |  createNullNumberArray2D()   |  Test that the function will not create a 2D array and instead return an IllegalArgumentException.  |
+|  DataUtilities Class              | getCumulativePercentages(KeyedValues data)    |  getCumulativePercentagesTest()   |  Test basic functionality of this function by creating a mock object of 2 (2, 1) KeyedValues values and call getCumulativePercentages(values). Expected value is 1.0. |
+|  DataUtilities Class              | getCumulativePercentages(KeyedValues data)    | getCumulativePercentagesTestWithLotsOfValues()    | Test basic functionality of this function using a larger amount of KeyedValues values.    |
+|  DataUtilities Class              | getCumulativePercentages(KeyedValues data)    | getCumulativePercentagesTestWithTwoValues()    | Test functionality of function using a mock object of KeyedValues and checking individual elements of the created table.   |
+|  DataUtilities Class              |  getCumulativePercentages(KeyedValues data)   |  getCumulativePercentagesTestNullItems()   |  Try to create a mock object of KeyedValues that is null, and input this Null KeyedValues list int getCumulativePercentages()  |
+|  DataUtilities Class              |  equal(double[][] a, double[][] b)   |  equalsTest()   |  Test basic functionality of this function by constructing two equal 2D arrays and calling equals() using the two equal arrays as input. We are expecting the function to return true. |
+|  DataUtilities Class              |  equal(double[][] a, double[][] b)   |  equalsTestNotEqual()   | Test basic functionality of this function by constructing two different 2D arrays and calling equals() using the two different arrays as input. We are expecting the function to return false.  |
+|  DataUtilities Class              |  equal(double[][] a, double[][] b)   |  equalsTestEmptyArrays()   |  Try to test that two arrays are equal even when they are empty. We are expecting the function to return true.  |
+|  DataUtilities Class              |  equal(double[][] a, double[][] b)   |  equalsTestNullArrays()   | Try to see if two null 2D arrays are considered to be equal. Expected to return true.   |
+
 
 
 # 4 How the team work/effort was divided and managed
