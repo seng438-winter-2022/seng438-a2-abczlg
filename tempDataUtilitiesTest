@@ -1,0 +1,321 @@
+package org.jfree.data.test;
+
+
+import static org.junit.Assert.*; import org.jfree.data.Range; import org.junit.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+import org.jfree.data.*;
+import org.jfree.data.DataUtilities;
+import org.jfree.data.Values2D;
+import org.jfree.data.KeyedValues;
+
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.junit.Test;
+
+public class DataUtilitiesTest extends DataUtilities {
+	
+	Mockery mockingContext;
+	Values2D values2D;
+	KeyedValues values;
+	@Before
+	public void setup() throws Exception{
+		mockingContext = new Mockery();
+		values2D = mockingContext.mock(Values2D.class);
+		values = mockingContext.mock(KeyedValues.class);
+	}
+	
+	@After
+	public void cleanup() throws Exception{
+		mockingContext = null;
+		values2D = null;
+		values = null;
+	}
+	
+	@Test
+	public void calculateColumnTotalForTwoValues() {
+
+	    mockingContext.checking(new Expectations() {
+	        {
+	            one(values2D).getRowCount();
+	            will(returnValue(2));
+	            one(values2D).getValue(0, 0);
+	            will(returnValue(7.5));
+	            one(values2D).getValue(1, 0);
+	            will(returnValue(2.5));
+	        }
+	    });
+	    
+	    double result = DataUtilities.calculateColumnTotal(values2D, 0);
+	    // verify
+	    assertEquals("The column total value should be 10.", result, 10.0, .000000001d);
+	    // tear-down: NONE in this test method
+	}
+	
+	@Test (expected = NullPointerException.class)
+	public void calculateNullColumn() {
+
+	    mockingContext.checking(new Expectations() {
+	        {
+	            one(values2D).getRowCount();
+	            will(returnValue(2));
+	            one(values2D).getValue(0, 0);
+	            will(returnValue(7.5));
+	            one(values2D).getValue(1, 0);
+	            will(returnValue(2.5));
+	            
+	            one(values2D).getValue(0, -1);
+	            will(throwException(new IndexOutOfBoundsException()));
+	        }
+	    });
+	    
+	    Integer nullVal = null;
+	 
+	    DataUtilities.calculateColumnTotal(values2D, nullVal);
+	    // verify
+	    // tear-down: NONE in this test method
+	}
+	
+	@Test
+	public void calculateRowForTwoValues() {
+
+	    mockingContext.checking(new Expectations() {
+	        {
+	            one(values2D).getRowCount();
+	            will(returnValue(2));
+	            one(values2D).getColumnCount();
+	            will(returnValue(2));
+	            one(values2D).getValue(0, 0);
+	            will(returnValue(5.5));
+	            one(values2D).getValue(0, 1);
+	            will(returnValue(4.5));
+	        }
+	    });
+	    
+	    double result2 = DataUtilities.calculateRowTotal(values2D, 0);
+	    // verify
+	    assertEquals("The row total value should be 10.", result2, 10, .000000001d);
+	    //assertNull("The column total value should be NULL.", result2);
+	    // tear-down: NONE in this test method
+	}
+	
+	
+	@Test (expected = NullPointerException.class)
+	public void calculateNullRow() {
+	    // setup
+	    mockingContext.checking(new Expectations() {
+	        {
+	            one(values2D).getRowCount();
+	            will(returnValue(2));
+	            one(values2D).getValue(0, 0);
+	            will(returnValue(7.5));
+	            one(values2D).getValue(1, 0);
+	            will(returnValue(2.5));
+	            
+	            one(values2D).getValue(-1, 0);
+	            will(throwException(new IndexOutOfBoundsException()));
+
+	        }
+	    });
+	    
+	    Integer nullVal = null;
+	 
+	    DataUtilities.calculateColumnTotal(values2D, nullVal);
+	    // verify
+	    // tear-down: NONE in this test method
+	}
+	
+	@Test 
+	public void createNumberArrayTest() {
+	    // setup
+		
+		double[] test = {1, 2, 3};
+		Number[] answer = {1.0, 2.0, 3.0};
+		
+		assertEquals("Arrays should be equal.", answer, DataUtilities.createNumberArray(test));
+		
+	}
+	
+	@Test 
+	public void createNumberArrayWithDoubles() {
+	    // setup
+		
+		double[] test = {1.45, 2.84, 3.35};
+		Number[] answer = {1.45, 2.84, 3.35};
+		
+		assertEquals("Arrays should be equal.", answer, DataUtilities.createNumberArray(test));
+		
+	}
+	
+	@Test 
+	public void createNumberArray2DTest() {
+	    // setup
+		
+		double[][] test = {{1, 1}, {2, 2}, {3, 3}};
+		Number[][] answer = {{1.0, 1.0}, {2.0, 2.0}, {3.0, 3.0}};
+		
+		assertEquals("Arrays should be equal.", answer, DataUtilities.createNumberArray2D(test));
+		
+	}
+	
+	@Test 
+	public void createEmptyNumberArray() {
+	    // setup
+		
+		double[][] test = {};
+		Number[][] answer = {};
+		
+		assertEquals("Array should be empty.", answer, DataUtilities.createNumberArray2D(test));
+		
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void createNullNumberArray() {
+	    // setup
+		
+		double[][] test = null;
+		Number[][] answer = {};
+		
+		assertNull("Array should be NULL.", DataUtilities.createNumberArray2D(test));
+	}
+	
+	@Test
+	public void getCumulativePercentagesTest() {
+	    mockingContext.checking(new Expectations() {
+	        {
+	        	 allowing(values).getItemCount();
+	                will(returnValue(1));
+	                allowing(values).getValue(0);
+	                will(returnValue(2));
+	                allowing(values).getKey(0);
+	                will(returnValue(1));
+	            }
+	        });
+
+	        KeyedValues result = DataUtilities.getCumulativePercentages(values);
+	        assertEquals("Results should be equal to 1.", 1.0, result.getValue(0));
+	}
+	
+	@Test
+	public void getCumulativePercentagesTest2() {
+	    mockingContext.checking(new Expectations() {
+	        {
+	        	 allowing(values).getItemCount();
+	                will(returnValue(1));
+	                allowing(values).getValue(0);
+	                will(returnValue(2));
+	                allowing(values).getKey(0);
+	                will(returnValue(1));
+	            }
+	        });
+
+	        KeyedValues result = DataUtilities.getCumulativePercentages(values);
+	        assertEquals("Results should be equal to 1.", 1.0, result.getValue(0));
+	}
+	
+	@Test
+	public void getCumulativePercentagesTestWithLotsOfValues() {
+	    mockingContext.checking(new Expectations() {
+	        {
+	            allowing(values).getItemCount();
+	            will(returnValue(4));
+	            allowing(values).getValue(0);
+	            will(returnValue(2));
+	            allowing(values).getValue(1);
+	            will(returnValue(2));
+	            allowing(values).getValue(2);
+	            will(returnValue(2));
+	            allowing(values).getValue(3);
+	            will(returnValue(2));
+	            allowing(values).getKey(0);
+	            will(returnValue(0));
+	            allowing(values).getKey(1);
+	            will(returnValue(1));
+	            allowing(values).getKey(2);
+	            will(returnValue(2));
+	            allowing(values).getKey(3);
+	            will(returnValue(3));
+	        }
+	    });
+	
+	    KeyedValues result = DataUtilities.getCumulativePercentages(values);
+	    assertEquals(0.25, result.getValue(0));
+	    assertEquals(0.5, result.getValue(1));
+//	    assertEquals(0.75, result.getValue(2));
+//	    assertEquals(1.0, result.getValue(3));
+	}
+
+	@Test
+	public void getCumulativePercentagesTestWithTwoValues() {
+	    mockingContext.checking(new Expectations() {
+	        {
+	            allowing(values).getItemCount();
+	            will(returnValue(2));
+	            allowing(values).getValue(0);
+	            will(returnValue(2));
+	            allowing(values).getValue(1);
+	            will(returnValue(2));
+	            allowing(values).getKey(0);
+	            will(returnValue(0));
+	            allowing(values).getKey(1);
+	            will(returnValue(1));
+
+	        }
+	    });
+	
+	    KeyedValues result = DataUtilities.getCumulativePercentages(values);
+	    assertEquals(0.5, result.getValue(0));
+	    assertEquals(1.0, result.getValue(1));
+
+	}
+	
+
+	@Test(expected = IllegalStateException.class)
+	public void getCumulativePercentagesTestNullItems() {
+	    mockingContext.checking(new Expectations() {
+	        {
+	            allowing(values).getItemCount();
+	            will(returnValue(null));
+
+	        }
+	    });
+	
+	    KeyedValues result = DataUtilities.getCumulativePercentages(values);
+	}
+	
+	/*
+	@Test
+	public void equalsTest() {
+		double[][] a = {{1, 1}, {2, 2}, {3, 3}};
+		double[][] b = {{1, 1}, {2, 2}, {3, 3}};
+
+		assertTrue("Arrays should be equal.", DataUtilities.equal(a,b));
+	}
+	
+	@Test
+	public void equalsTestNotEqual() {
+		double[][] a = {{1, 1}, {2, 2}, {3, 3}};
+		double[][] b = {{1, 1}, {2, 2}, {3, 4}};
+
+		assertFalse("Arrays should not be equal.", DataUtilities.equal(a,b));
+	}
+	
+	@Test
+	public void equalsTestEmptyArrays() {
+		double[][] a = {};
+		double[][] b = {};
+
+		assertTrue("Arrays should be equal.", DataUtilities.equal(a,b));
+	}
+	
+	@Test
+	public void equalsTestNullArrays() {
+		double[][] a = null;
+		double[][] b = null;
+
+		assertTrue("Arrays should be equal.", DataUtilities.equal(a,b));
+	}
+	*/
+}
