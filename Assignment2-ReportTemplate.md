@@ -27,7 +27,7 @@ you have explained in the test strategy section //above
 
 
 | Class          | Method   | Test Name | Strategy |
-| -------------- | -------------- | -------------- | -------------- |
+| -------------- | ---------------------------- | ---------------------------- | ---------------------------- |
 | Range Class    |    |     |     | 
 |  Range Class              |   |     |     | 
 |  Range Class              |   |    |     | 
@@ -36,7 +36,7 @@ you have explained in the test strategy section //above
 | DataUtilities Class |    |     |     | 
 |  DataUtilities Class               |   |     |     | 
 |  DataUtilities Class               |   |    |     | 
-|  DataUtilities Clas              |     |     |     |
+|  DataUtilities Class              |     |     |     |
 
 # 4 How the team work/effort was divided and managed
 
