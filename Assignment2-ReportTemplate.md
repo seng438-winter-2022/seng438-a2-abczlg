@@ -35,22 +35,22 @@ you have explained in the test strategy section //above
 |   Range Class             |  getLowerBound()    |  getLowerBoundTest()     |  Tests basic functionality of getLowerBound by using a range of two small double values (1.5/7.6). Expect to get 1.5.
 |   Range Class             | getLowerBound()     |  getLowerBoundTestWithEqualBoundaries()     |   Tests getLowerBound by inputting two equal values for the lower and upper boundary (2, 2).Expect to get 2.0.
 |   Range Class             |  getLowerBound()    |  getLowerBoundTestWithNegativeLowerBoundary()     |   Tests to see if a negative lower boundary can be used in the Range (-2.015, 2.0) to get the correct lower boundary. Expect to get -2.015.
-|   Range Class             |  getLowerBound()    |  getLowerBoundTestWithNegativeBoundaries()     |          |
-|   Range Class             |  getUpperBound()    |  getUpperBoundTest()     |          |
-|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithEqualBoundaries()     |          |
-|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithNegativeUpperBoundary()     |          |
-|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithNegativeBoundaries()      |          |
-|   Range Class             |  getLength()    |  getLengthShouldBeSeventyTwo()     |          |
-|   Range Class             |  getLength()    |  getLengthShouldBeZero()     |          |
-|   Range Class             |  getLength()    |  getLengthNegativeLowerBoundary()     |          |
-|   Range Class             |  getLength()    |  getLengthNegativeBoundaries()     |          |
-|   Range Class             |  contains(double value)    |  containsTestLowerBoundary()     |          |
-|   Range Class             |  contains(double value)    |  containsTestUpperBoundary()     |          |
-|   Range Class             |  contains(double value)    |  containsTestAboveUpperBoundary()     |          |
-|   Range Class             |  contains(double value)    |  containsTestBelowLowerBoundary()     |          |
-|   Range Class             |  contains(double value)    |  containsTestMiddleValue()     |          |
-|   Range Class             |  contains(double value)    |  containsTestWithDouble()     |          |
-|   Range Class             |  contains(double value)    |  containsTestBelowLowerBoundaryWithDoubles()     |          |
+|   Range Class             |  getLowerBound()    |  getLowerBoundTestWithNegativeBoundaries()     |     Tests to see if negative boundaries can be used in the Range (-96, -10) to get the correct lower boundary. Expect to get -96     |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTest()     |     Tests basic functionality of getUpperBound by using a range of two small double values (1.5/7.6). Expect to get 7.6.     |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithEqualBoundaries()     |     Tests getUpperBound by inputting two equal values for the lower and upper boundary (2.0, 2.0). Expect to get 2.0.     |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithNegativeLowerBoundary()     |     Tests to see if a negative lower boundary can be used in the Range (-2.015, 2.0) to get the correct upper boundary. Expect to get 2.0.    |
+|   Range Class             |  getUpperBound()    |  getUpperBoundTestWithNegativeBoundaries()      |     Tests to see if negative boundaries in the Range (-2.015, -2.0) can be used to get the correct upper boundary. Expect to get -2.0.     |
+|   Range Class             |  getLength()    |  getLengthShouldBeSeventyTwo()     |     Tests basic functionality to see if getLength will work with the Range (24, 69). Expect to get 72.     |
+|   Range Class             |  getLength()    |  getLengthShouldBeZero()     |     Tests to see if a Range (0, 0) will return the correct length. Expect to get 0.     |
+|   Range Class             |  getLength()    |  getLengthNegativeLowerBoundary()     |     Tests if getLength works with a negative lower boundary in the Range (-24.5, 96). Expect to get 120.5.     |
+|   Range Class             |  getLength()    |  getLengthNegativeBoundaries()     |     Tests if getLength works with negative boundaries in the Range (-96, -10). Expect to get 86.     |
+|   Range Class             |  contains(double value)    |  containsTestLowerBoundary()     |     Tests that countains can detect a lower boundary with Range (-96, -10). Expect to get true.     |
+|   Range Class             |  contains(double value)    |  containsTestUpperBoundary()     |    Tests that countains can detect an upper boundary with Range (-96, -10). Expect to get true.      |
+|   Range Class             |  contains(double value)    |  containsTestAboveUpperBoundary()     |    Tests that contains will not detect a value above the upper boundary with Range (-96, -10) with a check for -9. Expect to get false.      |
+|   Range Class             |  contains(double value)    |  containsTestBelowLowerBoundary()     |     Tests that contains will not detect a value below the lower boundary with Range (-96, -10) with a check for -97. Expect to get false.     |
+|   Range Class             |  contains(double value)    |  containsTestMiddleValue()     |     Tests to see if contains will detect a value in the middle of a Range (-50, 23) with a check for 10. Expect to get true.     |
+|   Range Class             |  contains(double value)    |  containsTestWithDouble()     |     Tests to see if contains will detect a double value in a Range (-50.25, 23) with a check for -50.23). Expect to get true.     |
+|   Range Class             |  contains(double value)    |  containsTestBelowLowerBoundaryWithDoubles()     |     Tests to see if contains will detect a double below the lower boundaries of a Range (-50.25, 23) with a check for -50.26. Expect to get true.     |
 | DataUtilities Class |  calculateColumnTotal(Values2D data, int column)  |  calculateColumnTotalForTwoValues()   | Test basic functionality by creating two rows with small values (7.5, 2.5). Add the values of each column. Expecting 10.0.    | 
 |  DataUtilities Class               | calculateColumnTotal(Values2D data, int column)  |  calculateNullColumn()   |  Try to calculate the total sum of a non-existing column. Should not work and a NullPointerException should be thrown.    | 
 |  DataUtilities Class               | calculateRowTotal(Values2D data, int row)  |  calculateRowForTwoValues()  | Test basic functionality by creating two columns with small values (5.5, 4.5) and sum up each column. Expecting 10.0.    | 
