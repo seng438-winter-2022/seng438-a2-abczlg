@@ -32,7 +32,7 @@ you have explained in the test strategy section //above
 |  Range Class              |   |     |     | 
 |  Range Class              |   |    |     | 
 |   Range Class             |     |     |     | 
-|   Range Class             | --------- | ----------- | ----------|
+|   Range Class             |      |       |          |
 | DataUtilities Class |    |     |     | 
 |  DataUtilities Class               |   |     |     | 
 |  DataUtilities Class               |   |    |     | 
