@@ -27,16 +27,16 @@ you have explained in the test strategy section //above
 
 
 | Class          | Method   | Test Name | Strategy |
-| -------------- | --------- | ----------- | ----------|
+| -------------- | -------------- | -------------- | -------------- |
 | Range Class    |    |     |     | 
-|                |   |     |     | 
-|                |   |    |     | 
-|                |     |     |     | 
-| -------------- | --------- | ----------- | ----------|
+|  Range Class              |   |     |     | 
+|  Range Class              |   |    |     | 
+|   Range Class             |     |     |     | 
+|   Range Class             | --------- | ----------- | ----------|
 | DataUtilities Class |    |     |     | 
-|                |   |     |     | 
-|                |   |    |     | 
-|                |     |     |     |
+|  DataUtilities Class               |   |     |     | 
+|  DataUtilities Class               |   |    |     | 
+|  DataUtilities Clas              |     |     |     |
 
 # 4 How the team work/effort was divided and managed
 
